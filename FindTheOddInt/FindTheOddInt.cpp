@@ -4,12 +4,8 @@
 using namespace std;
 
 int findOdd(const vector<int>& numbers) {
-    for (int index = 0; index < numbers.size(); index++) {
-        int counter = 0;
-        for (int i = 0; i < numbers.size(); i++) {
-            if (numbers[index] == numbers[i]) counter++;
-        }
-        if (counter % 2 != 0) return numbers[index];
+    for (auto e : numbers) {
+        if (count(numbers.begin(), numbers.end(), e) % 2 != 0) return e;
     }
 }
 
